@@ -1,6 +1,7 @@
 import math
 import pyperclip
 
+
 def quad_calc(a, b, c):
     d = (b ** 2) - (4 * a * c)
     if d < 0:
@@ -12,7 +13,6 @@ def quad_calc(a, b, c):
         x1 = (-b + math.sqrt(d)) / (2 * a)
         x2 = (-b - math.sqrt(d)) / (2 * a)
         return x1, x2
-
 
 
 while True:
