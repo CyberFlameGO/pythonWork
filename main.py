@@ -1,22 +1,26 @@
-import cmath
-
-aval = int(input("Enter a: "))
-bval = int(input("Enter b: "))
-cval = int(input("Enter c: "))
-
+import math
+import pyperclip
 
 def quad_calc(a, b, c):
     d = (b ** 2) - (4 * a * c)
     if d < 0:
         return None
     elif d == 0:
-        x = (-b + cmath.sqrt(d)) / (2 * a)
+        x = (-b + math.sqrt(d)) / (2 * a)
         return x
     else:
-        x1 = (-b + cmath.sqrt(d)) / (2 * a)
-        x2 = (-b - cmath.sqrt(d)) / (2 * a)
+        x1 = (-b + math.sqrt(d)) / (2 * a)
+        x2 = (-b - math.sqrt(d)) / (2 * a)
         return x1, x2
 
 
-print(quad_calc(aval, bval, cval))
 
+while True:
+    aval = int(input("Enter a: "))
+    bval = int(input("Enter b: "))
+    cval = int(input("Enter c: "))
+    val1, val2 = quad_calc(aval, bval, cval)
+    val1 = round(val1, 2)
+    val2 = round(val2, 2)
+    print(val1, val2)
+    pyperclip.copy(str(val1) + ", " + str(val2))
