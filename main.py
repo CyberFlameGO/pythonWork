@@ -16,10 +16,10 @@ def quad_calc(a, b, c):
 
 
 while True:
-    aval = int(input("Enter a: "))
-    bval = int(input("Enter b: "))
-    cval = int(input("Enter c: "))
-    val1, val2 = quad_calc(aval, bval, cval)
+    a_val = int(input("Enter a: "))
+    b_val = int(input("Enter b: "))
+    c_val = int(input("Enter c: "))
+    val1, val2 = quad_calc(a_val, b_val, c_val)
     val1 = round(val1, 2)
     val2 = round(val2, 2)
     print(val1, val2)
