@@ -1,8 +1,19 @@
+"""
+Math functions for me being lazy
+"""
 import math
 import pyperclip
 
 
-def quad_calc(a, b, c):
+def quad_calc(a: float, b: float, c: float) -> None | float | tuple[float, float]:
+    """
+    Calculates the roots of a quadratic equation.
+    :rtype: None | float | tuple[float, float]
+    :param a: Float
+    :param b: Float
+    :param c: Float
+    :return:
+    """
     d = (b ** 2) - (4 * a * c)
     if d < 0:
         return None
