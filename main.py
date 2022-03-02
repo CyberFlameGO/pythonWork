@@ -16,9 +16,9 @@ def quad_calc(a, b, c):
 
 
 while True:
-    a_val = int(input("Enter a: "))
-    b_val = int(input("Enter b: "))
-    c_val = int(input("Enter c: "))
+    a_val = float(input("Enter a: "))
+    b_val = float(input("Enter b: "))
+    c_val = float(input("Enter c: "))
     val1, val2 = quad_calc(a_val, b_val, c_val)
     val1 = round(val1, 2)
     val2 = round(val2, 2)
