@@ -1,1 +1,5 @@
 pyperclip
+matplotlib
+pandas
+cython
+coverage

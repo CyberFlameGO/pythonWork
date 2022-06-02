@@ -1,14 +1,17 @@
-def calc(a, r, n):
-    return (a * ((r ** n) - 1)) / (r - 1)
+"""
+Main work
+"""
 
 
 def main():
-    while True:
-        an = float(input("Enter the amount: "))
-        rn = float(input("Enter the rate: "))
-        nn = int(input("Enter n: "))
-        print(calc(an, rn, nn))
+    match input("hi"):
+        case "t":
+            print("ok")
+        case "y":
+            pass
+        case _:
+            pass
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
