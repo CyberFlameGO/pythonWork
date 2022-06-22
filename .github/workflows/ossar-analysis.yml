@@ -33,7 +33,7 @@ jobs:
 
     steps:
     - name: Harden Runner
-      uses: step-security/harden-runner@dd5681a7d0c66fb362664d618ef4a90d656f6516
+      uses: step-security/harden-runner@cdea734fa57747b9831aa9d6fcb274c5f9669557
       with:
         egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
 
@@ -57,6 +57,6 @@ jobs:
 
       # Upload results to the Security tab
     - name: Upload OSSAR results
-      uses: github/codeql-action/upload-sarif@ccf479d3364c81503741a6f927bf29c573e35c82
+      uses: github/codeql-action/upload-sarif@2e0c6caf16ddf7e90e391c48bda42895211a463a
       with:
         sarif_file: ${{ steps.ossar.outputs.sarifFile }}
