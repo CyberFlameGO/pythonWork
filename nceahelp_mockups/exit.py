@@ -3,7 +3,7 @@ Mocked design for project.
 """
 import time
 
-HORIZONTAL_LINE: str = "-" * 80
+HORIZONTAL_LINE: str = "-" * 80  # constant for horizontal line
 
 
 def main():
@@ -30,18 +30,18 @@ def main():
         capitalized_string = name.capitalize()  # Converts first character to uppercase and others to lowercase
         print(HORIZONTAL_LINE)
 
-        for question in questions:
-            print(question[0])
-            user_answer = input("Your answer: ").lower().strip()
-            if user_answer == question[1]:
+        for question in questions:  # for each question in the list, instead of repeating the code for each question
+            print(question[0])  # print the question
+            user_answer = input("Your answer: ").lower().strip()  # ask the user for their answer
+            if user_answer == question[1]:  # if the user answer matches the one in the list
                 print("Correct!")
-                score += 1
+                score += 1  # add to the score
             else:
-                print("Wrong answer! The correct answer was " + question[1])
+                print("Wrong answer! The correct answer was " + question[1])  # if wrong, show the answer
             print(HORIZONTAL_LINE)
-        print("Your score is " + str(score) + " out of " + str(len(questions)))
+        print("Your score is " + str(score) + " out of " + str(len(questions)))  # print score out of total
         print(HORIZONTAL_LINE)
-        print("Would you like to play again?\n")
+        print("Would you like to play again?\n")  # play again logic
         play_again_check = True
         while play_again_check:
             play_again = input("(yes/no)\n").lower().strip()
