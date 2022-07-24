@@ -6,7 +6,7 @@ from typing import Any
 
 class Quiz(object):
     """
-    Quiz logic class,.
+    Quiz logic class.
     The quiz set MUST be a dictionary with the following structure:
     "dict[int, tuple[str, tuple[Any, ...], set[Any, ...], Any]]"
     The first element of the tuple is the question, the second is the answers, the third is the possible user inputs
