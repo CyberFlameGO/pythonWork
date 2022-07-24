@@ -19,7 +19,7 @@ class Quiz(object):
         self.quiz_set = quiz_set
         self.score: int = 0  # Declares the score variable, set to zero
 
-    def quiz_runner(self):
+    def quiz_runner(self) -> list[str, int]:
         """
         Start the quiz.
         """
@@ -41,7 +41,7 @@ class Quiz(object):
                         question_check = False
                     elif code == 2:
                         print("Wrong input, try again!")
-        return self.name, self.score
+        return [self.name, self.score]
 
     def answer_checking(self, question: int, user_input: str) -> tuple[bool, int]:
         """
@@ -72,14 +72,29 @@ def main():
             ("True", "False"),
             {"true", "false"}, "true")
     }
+    quizzing = True
+    while quizzing:
+        quiz = Quiz(input("What is your first name?\n").strip(), questions)  # This to ask the end users name.
+        print(f"Hey, {quiz.name}, welcome to my Disney/Pixar themed Quiz!")  # Welcomes the user and prints their
+        # name.
+        print("Let's start the quiz!\nHere's your first question:")  # Prints a message to the user.
+        player_name, player_score = quiz.quiz_runner()  # Starts the quiz.
+        print(f"{player_name}, you scored {player_score} out of {len(questions)}!")  # Prints the user's score. If they
+        # got 100% correct, printing a different message is very do-able.
 
-    print("Hey there!\n")
-    quiz = Quiz(input("What is your first name?\n").strip(), questions)  # This to ask the end users name.
-    print(f"Hey, {quiz.name}, welcome to my Disney/Pixar themed Quiz!")  # Welcomes the user and prints their
-    # name.
-    print("Let's start the quiz!\nHere's your first question:")  # Prints a message to the user.
-    player_name, player_score = quiz.quiz_runner()  # Starts the quiz.
-    print(f"{player_name}, you scored {player_score} out of {len(questions)}!")  # Prints the user's score.
+        # Asks the user if they want to play again.
+        play_again_check = True
+        while play_again_check:
+            quiz_again = str(input("Would you like to play again? (yes/no)\n").lower().strip())
+            if quiz_again == "no":
+                play_again_check = False
+                quizzing = False
+                print("Thanks for playing!")
+            elif quiz_again == "yes":
+                print("Let's go again!")
+                play_again_check = False
+            else:
+                print("I'm sorry, I didn't understand that. Please try again.")
 
 
 if __name__ == "__main__":
