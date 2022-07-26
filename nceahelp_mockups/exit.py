@@ -42,15 +42,15 @@ def main():
         print("Your score is " + str(score) + " out of " + str(len(questions)))  # print score out of total
         print(HORIZONTAL_LINE)
         print("Would you like to play again?\n")  # play again logic
-        play_again_check = True
-        while play_again_check:
+        play_again = True
+        while play_again:
             play_again = input("(yes/no)\n").lower().strip()
             if play_again == "yes":
                 playing = True
-                play_again_check = False
+                play_again = False
             elif play_again == "no":
                 playing = False
-                play_again_check = False
+                play_again = False
             else:
                 print("Please enter a valid answer.")
 
