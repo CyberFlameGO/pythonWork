@@ -50,23 +50,18 @@ def answer_checking(question: int, quiz_set, user_input: str) -> tuple[bool, int
 
 
 # noinspection DuplicatedCode
-def main():
+def file2dict(filename):
     """
-    Main function
+    Reads a file and returns a dictionary with the following structure:
+    Question | Possible Options (separated by commas, lowercase) | Possible Answers (separated by commas,
+    lowercase) | Answer (in the possible answers section, lowercase)
+    The pipes must have a space leading and trailing the pipe character, and the comma must have a trailing space.
+    Example:
+    What is water's molecular structure? | A. H2O, B. H, C. O, D. K | a, b, c, d | a
+    :param filename:
+    :return:
     """
-
-    # We use a dictionary here for key-value pairing of question number to question.
-    # questions: dict[int, tuple[str, tuple[Any, ...], set[Any, ...], Any]] = {
-    #     1: ("What is the capital of France?",
-    #         ("A - Paris",
-    #          "B - Berlin",
-    #          "C - London",
-    #          "D - Madrid"), {"a", "b", "c", "d"}, "a"),
-    #     2: ("The symbol for the element Gold is Au.",
-    #         ("True", "False"),
-    #         {"true", "false"}, "true")
-    # }
-    with open("questions.txt") as file:
+    with open(filename) as file:
         for line in file:
             row = line.split(' | ')
             if row[-1].endswith('\n'):
@@ -75,12 +70,19 @@ def main():
                 row[-1] = row[-1][:-1]
             separated_str_tuple = tuple(row[1].split(", "))
             separated_str_set = set(row[2].split(", "))
-            print(separated_str_set, "\n", separated_str_tuple)
             try:
-                questions[len(questions) + 1] = (row[0], tuple(row[1:2]), set(row[2:3]), row[3])
+                questions[len(questions) + 1] = (row[0], separated_str_tuple, separated_str_set, row[3])
             except NameError:
-                questions: dict = {1: (row[0], tuple(row[1:]), set(row[2:]), row[3])}
-            print(row, "\n", questions)
+                questions: dict = {1: (row[0], separated_str_tuple, separated_str_set, row[3])}
+    return questions
+
+
+# noinspection DuplicatedCode
+def main():
+    """
+    Main function
+    """
+    questions = file2dict("questions.txt")
     quizzing = True
     while quizzing:
         player_name = str(input("What is your first name?\n").strip())
