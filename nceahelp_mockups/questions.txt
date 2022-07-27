@@ -1,0 +1,2 @@
+question | options (tuple) | possible inputs (e.g. a, b, c, d) in lowercase (using a set) | answer letter in lowercase (e.g. d)
+What is water's molecular structure? | h2o, h, o, k | a, b, c, d | a

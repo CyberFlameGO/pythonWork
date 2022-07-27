@@ -56,16 +56,31 @@ def main():
     """
 
     # We use a dictionary here for key-value pairing of question number to question.
-    questions: dict[int, tuple[str, tuple[Any, ...], set[Any, ...], Any]] = {
-        1: ("What is the capital of France?",
-            ("A - Paris",
-             "B - Berlin",
-             "C - London",
-             "D - Madrid"), {"a", "b", "c", "d"}, "a"),
-        2: ("The symbol for the element Gold is Au.",
-            ("True", "False"),
-            {"true", "false"}, "true")
-    }
+    # questions: dict[int, tuple[str, tuple[Any, ...], set[Any, ...], Any]] = {
+    #     1: ("What is the capital of France?",
+    #         ("A - Paris",
+    #          "B - Berlin",
+    #          "C - London",
+    #          "D - Madrid"), {"a", "b", "c", "d"}, "a"),
+    #     2: ("The symbol for the element Gold is Au.",
+    #         ("True", "False"),
+    #         {"true", "false"}, "true")
+    # }
+    with open("questions.txt") as file:
+        for line in file:
+            row = line.split(' | ')
+            if row[-1].endswith('\n'):
+                row[-1] = row[-1][:-1]
+            if row[-1].endswith('\r'):
+                row[-1] = row[-1][:-1]
+            separated_str_tuple = tuple(row[1].split(", "))
+            separated_str_set = set(row[2].split(", "))
+            print(separated_str_set, "\n", separated_str_tuple)
+            try:
+                questions[len(questions) + 1] = (row[0], tuple(row[1:2]), set(row[2:3]), row[3])
+            except NameError:
+                questions: dict = {1: (row[0], tuple(row[1:]), set(row[2:]), row[3])}
+            print(row, "\n", questions)
     quizzing = True
     while quizzing:
         player_name = str(input("What is your first name?\n").strip())
