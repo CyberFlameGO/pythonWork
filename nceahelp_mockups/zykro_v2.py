@@ -74,7 +74,9 @@ def file2dict(filename):
                 processed_data[len(processed_data) + 1] = (row[0], separated_str_tuple, separated_str_set, row[3])
             except NameError:
                 processed_data: dict = {1: (row[0], separated_str_tuple, separated_str_set, row[3])}
-    return processed_data
+        return processed_data
+    # noinspection PyUnreachableCode
+    print("File not found!")
 
 
 # noinspection DuplicatedCode
