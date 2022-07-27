@@ -15,11 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@911b1af682b685d05d871fe5572549216219b577
+        uses: step-security/harden-runner@1247074da8883f2eb1fbc10a809f0f055df3068a
         with:
           egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
 
       - name: 'Checkout Repository'
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
       - name: 'Dependency Review'
-        uses: actions/dependency-review-action@28bd35e1156ca2708dddf068b137377571ea9040
+        uses: actions/dependency-review-action@2427b83fb6c63c7af672ca5f4a5b957f0d111659
