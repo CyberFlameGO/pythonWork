@@ -61,7 +61,7 @@ def file2dict(filename):
     :param filename:
     :return:
     """
-    with open(filename) as file:
+    with open(filename, 'r', encoding = "utf8") as file:
         for line in file:
             row = line.split(' | ')
             if row[-1].endswith('\n'):
@@ -71,10 +71,10 @@ def file2dict(filename):
             separated_str_tuple = tuple(row[1].split(", "))
             separated_str_set = set(row[2].split(", "))
             try:
-                questions[len(questions) + 1] = (row[0], separated_str_tuple, separated_str_set, row[3])
+                processed_data[len(processed_data) + 1] = (row[0], separated_str_tuple, separated_str_set, row[3])
             except NameError:
-                questions: dict = {1: (row[0], separated_str_tuple, separated_str_set, row[3])}
-    return questions
+                processed_data: dict = {1: (row[0], separated_str_tuple, separated_str_set, row[3])}
+    return processed_data
 
 
 # noinspection DuplicatedCode

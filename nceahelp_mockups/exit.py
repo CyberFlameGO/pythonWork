@@ -5,6 +5,18 @@ import time
 
 HORIZONTAL_LINE: str = "-" * 80  # constant for horizontal line
 
+def play_again_checking():
+    while play_again:
+        play_again = input("(yes/no)\n").lower().strip()
+        if play_again == "yes":
+            playing = True
+            play_again = False
+        elif play_again == "no":
+            playing = False
+            play_again = False
+        else:
+            print("Please enter a valid answer.")
+
 
 def main():
     """
