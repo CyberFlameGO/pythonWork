@@ -33,7 +33,7 @@ def quiz_runner(name, quiz_set: dict) -> list[str, int]:
                     question_check = False
                 elif code == 2:
                     print("Wrong input, try again!")
-    return [name, score]
+    return score
 
 
 def answer_checking(question: int, quiz_set, user_input: str) -> tuple[bool, int]:
@@ -72,11 +72,10 @@ def file2dict(filename):
             separated_str_set = set(row[2].split(", "))
             try:
                 processed_data[len(processed_data) + 1] = (row[0], separated_str_tuple, separated_str_set, row[3])
-            except NameError:
+            except (NameError, UnboundLocalError):
                 processed_data: dict = {1: (row[0], separated_str_tuple, separated_str_set, row[3])}
-        return processed_data
-    # noinspection PyUnreachableCode
-    print("File not found!")
+    print("Questions loaded successfully!")
+    return processed_data
 
 
 # noinspection DuplicatedCode
