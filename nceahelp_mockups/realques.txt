@@ -1,12 +1,12 @@
-What country has the lowest literacy rate in the world?;A.South Sudan|B.Afganistan|C.Niger|D.Burkina Faso|A|SOUTH SUDAN
-What country has the best literacy rate in the world?; A.Finland|B.Japan|C.South Korea|D.Canada|D|CANADA
-Which country has the best university?;A.UK|B.Australia|C.India|D.USA|D|USA
-How many children are out of school in the world?;A.268 Million|B.158 Million|C.268 Million|D.306 Million|C|268 MILLION
-What continent has the highest percentage of children out of school?;A.Europe|B. Asia|C. Africa|D.Oceania|C|AFRICA
-What country has the best education system in the world?;A.Sweeden|B.UK|C.Switzerland|D.Australia|D|AUSTRALIAN
-What does Article 26 of the Universal Human Rights NOT guarantee to every child?;A.Free primary school attendance|B.Training for tolerance and understanding|C.Participation at school|D.School everyday|C|PARTICIPATION AT SCHOOL
-Which of these methods increases equal opportunities in education?;A.Common schooling of children from different social backgrounds|B. Increasing the economic power of a country|C. Late school enrolment|A|COMMON SCHOOLING OF CHILDREN FROM DIFFERENT SOCIAL BACKGROUNDS
-How many adults in the world are unable to read or write a simple sentence?;A.472 million|B.758 million|C.906 million|B|758 MILLION
-37 million of the world’s out-of-school children live in areas affected by crises and conflict?; A.True|B.False|A|TRUE
-Roughly equal numbers of boys and girls miss out on school.?;A.True|B.False|A|TRUE
-One third of primary age children missing out on school have a disability?;A.True|B.False|A|TRUE
+What country has the lowest literacy rate in the world?;A.South Sudan|B.Afganistan|C.Niger|D.Burkina Faso;A|SOUTH SUDAN
+What country has the best literacy rate in the world?; A.Finland|B.Japan|C.South Korea|D.Canada;D|CANADA
+Which country has the best university?;A.UK|B.Australia|C.India|D.USA;D|USA
+How many children are out of school in the world?;A.268 Million|B.158 Million|C.268 Million|D.306 Million;C|268 MILLION
+What continent has the highest percentage of children out of school?;A.Europe|B. Asia|C. Africa|D.Oceania;C|AFRICA
+What country has the best education system in the world?;A.Sweeden|B.UK|C.Switzerland|D.Australia;D|AUSTRALIAN
+What does Article 26 of the Universal Human Rights NOT guarantee to every child?;A.Free primary school attendance|B.Training for tolerance and understanding|C.Participation at school|D.School everyday;C|PARTICIPATION AT SCHOOL
+Which of these methods increases equal opportunities in education?;A.Common schooling of children from different social backgrounds|B. Increasing the economic power of a country|C. Late school enrolment;A|COMMON SCHOOLING OF CHILDREN FROM DIFFERENT SOCIAL BACKGROUNDS
+How many adults in the world are unable to read or write a simple sentence?;A.472 million|B.758 million|C.906 million;B|758 MILLION
+37 million of the world’s out-of-school children live in areas affected by crises and conflict?; A.True|B.False;A|TRUE
+Roughly equal numbers of boys and girls miss out on school.?;A.True|B.False;A|TRUE
+One third of primary age children missing out on school have a disability?;A.True|B.False;A|TRUE
