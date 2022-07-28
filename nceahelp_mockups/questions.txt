@@ -1,2 +1,2 @@
-What is water's molecular structure? | a, b, c, d | a, b, c, d | a
-Deez nuts | True, False | true, false | true
+What does R stand for in RGB? ! A - React, B - Red, C - Random, D - Rift ! b
+What does G stand for in RGB? ! A - Green, B - Gorilla, C - Grill, D - Gazette ! a
