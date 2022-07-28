@@ -4,7 +4,7 @@ Mocked design for project.
 from typing import Any
 
 
-def quiz_runner(name, quiz_set: dict) -> list[str, int]:
+def quiz_runner(quiz_set: dict) -> int:
     """
     Start the quiz.
     The quiz set MUST be a dictionary with the following structure:
@@ -13,14 +13,17 @@ def quiz_runner(name, quiz_set: dict) -> list[str, int]:
     (lowercase), and the fourth is the correct answer (lowercase).
     The code does not account for floats/integers as quiz answers (without being strings), though if it does require
     those, it's easy to add a TypeError check (or just let the answers come back as strings).
+    :param quiz_set:
+    :rtype: int
+    :return
     """
-    score = 0
+    score: int = 0
     for question_number, question_data in quiz_set.items():
-        question_check = True
+        question_check: bool = True
         while question_check:
             print(question_data[0])
-            for answer in question_data[1]:
-                print(answer)
+            for option in question_data[1]:
+                print(option)
             user_input = str(input("Your answer: ").lower().strip())
             result, code = answer_checking(question_number, quiz_set, user_input)
             if result:
@@ -32,11 +35,12 @@ def quiz_runner(name, quiz_set: dict) -> list[str, int]:
                     print(f"Wrong answer! The correct answer was {question_data[3]}")
                     question_check = False
                 elif code == 2:
-                    print("Wrong input, try again!")
+                    print(f"Wrong input, try again entering one of {question_data[2]}")
+        print("Current score:", score)
     return score
 
 
-def answer_checking(question: int, quiz_set, user_input: str) -> tuple[bool, int]:
+def answer_checking(question: int, quiz_set: dict, user_input: str) -> tuple[bool, int]:
     """
     Check if the user input is correct.
     """
@@ -73,9 +77,28 @@ def file2dict(filename):
             try:
                 processed_data[len(processed_data) + 1] = (row[0], separated_str_tuple, separated_str_set, row[3])
             except (NameError, UnboundLocalError):
-                processed_data: dict = {1: (row[0], separated_str_tuple, separated_str_set, row[3])}
+                processed_data: dict[int, tuple[str, tuple[Any, ...], set[Any, ...], Any]] = {1: (
+                    row[0], separated_str_tuple, separated_str_set, row[3])
+                }
     print("Questions loaded successfully!")
     return processed_data
+
+
+def play_again() -> bool:
+    """
+    Asks the user if they want to play again.
+    :return:
+    """
+    while True:
+        quiz_again = str(input("Would you like to play again? (yes/no)\n").lower().strip())
+        if quiz_again == "no":
+            print("Thanks for playing!")
+            return True
+        elif quiz_again == "yes":
+            print("Let's go again!")
+            return False
+        else:
+            print("I'm sorry, I didn't understand that. Please try again.")
 
 
 # noinspection DuplicatedCode
@@ -83,30 +106,23 @@ def main():
     """
     Main function
     """
-    questions = file2dict("questions.txt")
-    quizzing = True
+    questions: dict = file2dict("questions.txt")
+    quizzing: bool = True
     while quizzing:
         player_name = str(input("What is your first name?\n").strip())
         print(f"Hey, {player_name}, welcome to my Disney/Pixar themed Quiz!")  # Welcomes the user and prints their
         # name.
         print("Let's start the quiz!\nHere's your first question:")  # Prints a message to the user.
-        player_score = quiz_runner(player_name, questions)  # Starts the quiz.
+        player_score = quiz_runner(questions)  # Starts the quiz.
         print(f"{player_name}, you scored {player_score} out of {len(questions)}!")  # Prints the user's score. If they
         # got 100% correct, printing a different message is very do-able.
 
         # Asks the user if they want to play again.
-        play_again_check = True
-        while play_again_check:
-            quiz_again = str(input("Would you like to play again? (yes/no)\n").lower().strip())
-            if quiz_again == "no":
-                play_again_check = False
-                quizzing = False
-                print("Thanks for playing!")
-            elif quiz_again == "yes":
-                print("Let's go again!")
-                play_again_check = False
-            else:
-                print("I'm sorry, I didn't understand that. Please try again.")
+        if play_again():
+            print("Alright! New quiz coming up!")
+        else:
+            quizzing = False
+    exit()
 
 
 if __name__ == "__main__":
