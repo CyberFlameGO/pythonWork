@@ -90,7 +90,7 @@ def writing_to_file(a, b):  # definition used to write back the data to the file
 # noinspection DuplicatedCode
 def main():  # Definition for the main part of the code
 
-    with open('realques.txt') as f:  # Splits the question file into the separate questions in a dictionary
+    with open('realques.txt', 'r') as f:  # Splits the question file into the separate questions in a dictionary
         lines = list(f)
         while len(question_dic) < 15:  # This part of code splits the question file into parts so it can ask the
             # user the questions

@@ -77,8 +77,8 @@ def file2dict(filename):
             try:
                 processed_data[len(processed_data) + 1] = (row[0], separated_str_tuple, separated_str_set, row[3])
             except (NameError, UnboundLocalError):
-                processed_data: dict[int, tuple[str, tuple[Any, ...], set[Any, ...], Any]] = {1: (
-                    row[0], separated_str_tuple, separated_str_set, row[3])
+                processed_data: dict[int, tuple[str, tuple[Any, ...], set[Any, ...], Any]] = {
+                    1: (row[0], separated_str_tuple, separated_str_set, row[3])
                 }
     print("Questions loaded successfully!")
     return processed_data
@@ -93,10 +93,10 @@ def play_again() -> bool:
         quiz_again = str(input("Would you like to play again? (yes/no)\n").lower().strip())
         if quiz_again == "no":
             print("Thanks for playing!")
-            return True
+            return False
         elif quiz_again == "yes":
             print("Let's go again!")
-            return False
+            return True
         else:
             print("I'm sorry, I didn't understand that. Please try again.")
 
