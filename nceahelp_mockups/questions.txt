@@ -1,2 +1,2 @@
-What does R stand for in RGB? ! A - React, B - Red, C - Random, D - Rift ! b
-What does G stand for in RGB? ! A - Green, B - Gorilla, C - Grill, D - Gazette ! a
+What does R stand for in RGB? ! A - React, B - Red, C - Random, D - Rift ! b, red
+What does G stand for in RGB? ! A - Green, B - Gorilla, C - Grill, D - Gazette ! a, green

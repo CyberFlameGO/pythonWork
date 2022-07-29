@@ -24,7 +24,7 @@ def game(quiz):
     for question in quiz:  # for each question in the list, instead of repeating the code for each question
         print(question[0], f"\n{', '.join(question[1])}")  # print the question
         user_answer = input("Your answer: ").lower().strip()  # ask the user for their answer
-        if user_answer == question[2]:  # if the user answer matches the one in the list
+        if user_answer in question[-1]:  # if the user answer matches the one in the list
             print("Correct!")
             score += 1  # add to the score
         else:
@@ -45,10 +45,11 @@ def load_questions_from_file(file_name):
             if entry[-1].endswith('\r'):
                 entry[-1] = entry[-1][:-1]
             options = entry[1].split(", ")
+            answers = entry[2].split(", ")
             try:
-                elements.append([entry[0], options, entry[-1]])
+                elements.append([entry[0], options, answers])
             except (NameError, UnboundLocalError):
-                elements: list = [[entry[0], options, entry[-1]]]
+                elements: list = [[entry[0], options, answers]]
     return elements
 
 
