@@ -119,7 +119,7 @@ def main():
 
         # Asks the user if they want to play again.
         if play_again():
-            print("Alright! New quiz coming up!")
+            print("New quiz coming up!")
         else:
             quizzing = False
     exit()
