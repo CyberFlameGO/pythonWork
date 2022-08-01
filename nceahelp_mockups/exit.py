@@ -19,16 +19,22 @@ def replay_game():
             print("Please enter a valid answer.")
 
 
+def answer_logic(correct_answer):
+    user_answer = input("Your answer: ").lower().strip()  # ask the user for their answer
+    if user_answer in correct_answer:  # if the user answer matches the one in the list
+        print("Correct!")
+        return True
+    else:
+        print("Wrong answer! The correct answer was", ", ".join(correct_answer))  # if wrong, show the answer
+        return False
+
+
 def game(quiz):
     score = 0
     for question in quiz:  # for each question in the list, instead of repeating the code for each question
         print(question[0], f"\n{', '.join(question[1])}")  # print the question
-        user_answer = input("Your answer: ").lower().strip()  # ask the user for their answer
-        if user_answer in question[-1]:  # if the user answer matches the one in the list
-            print("Correct!")
+        if answer_logic(question[-1]):
             score += 1  # add to the score
-        else:
-            print("Wrong answer! The correct answer was",  question[1])  # if wrong, show the answer
         print(HORIZONTAL_LINE)
     print("Quiz complete!\nYour score was", score, "out of", len(quiz))  # print score out of total
 
