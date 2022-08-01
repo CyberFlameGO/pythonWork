@@ -28,7 +28,7 @@ def game(quiz):
             print("Correct!")
             score += 1  # add to the score
         else:
-            print("Wrong answer! The correct answer was " + question[1])  # if wrong, show the answer
+            print("Wrong answer! The correct answer was",  question[1])  # if wrong, show the answer
         print(HORIZONTAL_LINE)
     print("Quiz complete!\nYour score was", score, "out of", len(quiz))  # print score out of total
 
