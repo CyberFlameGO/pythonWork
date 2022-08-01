@@ -21,7 +21,7 @@ def replay_game():
 
 def answer_logic(correct_answer):
     user_answer = input("Your answer: ").lower().strip()  # ask the user for their answer
-    if user_answer in correct_answer:  # if the user answer matches the one in the list
+    if user_answer in [element.lower() for element in correct_answer]:  # if the user answer matches the one in the list
         print("Correct!")
         return True
     else:
@@ -32,7 +32,7 @@ def answer_logic(correct_answer):
 def game(quiz):
     score = 0
     for question in quiz:  # for each question in the list, instead of repeating the code for each question
-        print(question[0], f"\n{', '.join(question[1])}")  # print the question
+        print(question[0], f"\n{', '.join(question[1])}\nPlease enter a, b, c, or d")  # print the question
         if answer_logic(question[-1]):
             score += 1  # add to the score
         print(HORIZONTAL_LINE)
