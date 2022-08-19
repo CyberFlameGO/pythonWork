@@ -28,7 +28,7 @@ jobs:
       security-events: write
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@613bd0d3f757c824251c115a9ef1b95538fbcc07
+        uses: step-security/harden-runner@419f9d6ef954c3c7214dcf0b9babec78755dda8f
         with:
           egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
 
@@ -39,6 +39,6 @@ jobs:
         uses: microsoft/DevSkim-Action@430c605a9149e1c8f2d5ced90ec469e6ccdd858e
         
       - name: Upload DevSkim scan results to GitHub Security tab
-        uses: github/codeql-action/upload-sarif@cade2b5621f0d8a99851d6a77e035baf73b60445
+        uses: github/codeql-action/upload-sarif@5502fefdae3ab5a086c82226f250a4afa2b515b1
         with:
           sarif_file: devskim-results.sarif
