@@ -25,6 +25,18 @@ def main():
                 b_val = float(input("Enter b: ").strip())
                 c_val = float(input("Enter c: ").strip())
                 print(inverted_cos_rule(a_val, b_val, c_val))
+        case "sin":
+            while True:
+                b_val = float(input("Enter b: ").strip())
+                c_val = float(input("Enter c: ").strip())
+                angle_val = float(input("Enter angle in degrees: ").strip())
+                print(sine_rule(b_val, c_val, angle_val))
+        case "area":
+            while True:
+                b_val = float(input("Enter b: ").strip())
+                c_val = float(input("Enter c: ").strip())
+                angle_val = float(input("Enter angle in degrees: ").strip())
+                print(triangle_area(b_val, c_val, angle_val))
         case "y":
             pass
         case _:
@@ -66,6 +78,21 @@ def sine_rule(b, c, angle):
     :rtype:
     """
     return math.sqrt((b ** 2 + c ** 2 - 2 * b * c * math.sin(angle * math.pi / 180)))
+
+
+def triangle_area(b, c, angle):
+    """
+    Triangle area
+    :param b:
+    :type b:
+    :param c:
+    :type c:
+    :param angle: Angle in degrees
+    :type angle:
+    :return:
+    :rtype:
+    """
+    return 0.5 * b * c * math.sin(angle * math.pi / 180)
 
 
 if __name__ == '__main__':
