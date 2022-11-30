@@ -21,6 +21,6 @@ jobs:
 
       - uses: actions/checkout@bf085276cecdb0cc76fbbe0687a5a0e786646936
       - name: 'Qodana Scan'
-        uses: JetBrains/qodana-action@a2e39fda0c5f17602b43a5cf7927e8273fb46c00
+        uses: JetBrains/qodana-action@497ab9520543e345ffa1f5f648b2b2371a672715
         with:
           linter: jetbrains/qodana-python
