@@ -31,7 +31,7 @@ jobs:
         with:
           egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
 
-      - uses: actions/checkout@bf085276cecdb0cc76fbbe0687a5a0e786646936
+      - uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b
 
       - name: Run PSScriptAnalyzer
         uses: microsoft/psscriptanalyzer-action@6b2948b1944407914a58661c49941824d149734f
