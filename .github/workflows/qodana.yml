@@ -19,7 +19,7 @@ jobs:
         with:
           egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
 
-      - uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f
+      - uses: actions/checkout@cd6a9fd49371476d813e892956e2e920fcc3fb7e
       - name: 'Qodana Scan'
         uses: JetBrains/qodana-action@7afb26c0c2f325c0d5c21ea1f617c79c7f899337
         with:
