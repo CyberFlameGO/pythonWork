@@ -39,6 +39,6 @@ jobs:
         uses: microsoft/DevSkim-Action@7ac186de008d6d0b77a8aef3f15dacd6b612ac17
         
       - name: Upload DevSkim scan results to GitHub Security tab
-        uses: github/codeql-action/upload-sarif@8ca5570701137b67af3d8ae3d6452f4cee6579da
+        uses: github/codeql-action/upload-sarif@318bcc7f84641571687cf0178155b0e9693c0f45
         with:
           sarif_file: devskim-results.sarif
