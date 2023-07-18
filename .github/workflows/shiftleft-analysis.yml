@@ -55,6 +55,6 @@ jobs:
         # type: python
 
     - name: Upload report
-      uses: github/codeql-action/upload-sarif@942acabcd0789844bc9e657cd21b52070cc00afe
+      uses: github/codeql-action/upload-sarif@6ae46f7a92375136e54d98f1562e956ac595c7fc
       with:
         sarif_file: reports
