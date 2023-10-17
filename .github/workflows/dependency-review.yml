@@ -20,6 +20,6 @@ jobs:
           egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
 
       - name: 'Checkout Repository'
-        uses: actions/checkout@8530928916aaef40f59e6f221989ccb31f5759e7
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
       - name: 'Dependency Review'
         uses: actions/dependency-review-action@04e56a4409d875c6bac47c12191efa4598d1bd8d
