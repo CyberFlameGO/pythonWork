@@ -29,7 +29,7 @@ jobs:
           egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
         
       - name: "Checkout code"
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        uses: actions/checkout@473055ba18d6d2da209cd46110aadb9275e3194e
         with:
           persist-credentials: false
 
