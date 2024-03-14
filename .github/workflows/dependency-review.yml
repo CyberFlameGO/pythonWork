@@ -22,4 +22,4 @@ jobs:
       - name: 'Checkout Repository'
         uses: actions/checkout@8410ad0602e1e429cee44a835ae9f77f654a6694
       - name: 'Dependency Review'
-        uses: actions/dependency-review-action@97f7ba06d0716f92002482a2101a8b7f93e8ad3b
+        uses: actions/dependency-review-action@adaed3274607f96ef597bddda141fef835b1c4ff
