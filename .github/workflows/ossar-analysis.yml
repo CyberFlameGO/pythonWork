@@ -38,7 +38,7 @@ jobs:
         egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
 
     - name: Checkout repository
-      uses: actions/checkout@cd7d8d697e10461458bc61a30d094dc601a8b017
+      uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f
 
     # Ensure a compatible version of dotnet is installed.
     # The [Microsoft Security Code Analysis CLI](https://aka.ms/mscadocs) is built with dotnet v3.1.201.
