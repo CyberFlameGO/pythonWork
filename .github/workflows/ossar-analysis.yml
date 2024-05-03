@@ -57,6 +57,6 @@ jobs:
 
       # Upload results to the Security tab
     - name: Upload OSSAR results
-      uses: github/codeql-action/upload-sarif@93b8232a3935eba04122a296f9eaa8942292b594
+      uses: github/codeql-action/upload-sarif@84d6ead480f493c32a39f012db4b9dfb02e8868b
       with:
         sarif_file: ${{ steps.ossar.outputs.sarifFile }}
